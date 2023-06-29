@@ -1,7 +1,10 @@
 #include <cstdio>
 #include <vector>
 #include <string>
+#include <memory>
+#include <unordered_map>
 
+#define TRIE_DEFINE YES
 
 /*
     这是前缀树的基类节点
@@ -92,7 +95,7 @@ private:
     /* Root node of the trie */
     std::unique_ptr<TrieNode> root_;
     /* Read-write lock for the trie */
-    ReaderWriterLatch latch_;
+    // ReaderWriterLatch latch_;
 
 public:
     Trie(){
@@ -106,10 +109,11 @@ public:
 
     template <typename T>
     T GetValue(const std::string &key, bool *success){
-        /*获取节点对应的值*/
+        /*获取节点对应的值 想一想怎么找相似率最高的字符串对应的下标*/
     }
 
     /*这个函数不用管*/
+    /*
     bool Remove(std::string_view key) {
         if (key.empty())
         {
@@ -188,4 +192,6 @@ public:
         latch_.WUnlock();
         return true;
     }
+    */
+    
 };
