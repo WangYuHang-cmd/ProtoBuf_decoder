@@ -11,8 +11,7 @@
 class ProtoBuf_Decoder{
 
 private:
-    int MxTime{0};
-    double BinarySimilarity{0.0};
+    int BinarySimilarity{0};
     std::vector<std::string> DataVec;
     std::unordered_map<std::string, int> DataHash;
     Trie MyTrie;
@@ -32,25 +31,24 @@ public:
         /*获取下标为index对应的data*/
     }
 
-    bool InsertVal(std::string val){ 
-        /*获取十六进制的ProtoBuf编码格式的传输数据 
-            并转换为二进制形式存入data中 
-            同时更新MxTime和BinarySimilarity*/
+    std::string Proto2Binay(string& Proto_s){
+
     }
 
-    double calc_s(std::string& s_a,std::string& s_b){
-        /*计算两个二进制字符串的相似率*/
+    std::string Hex2proto(string& Hex_s){
+
+    }
+
+    bool InsertVal(std::string val){ 
+        /*获取十六进制的ProtoBuf编码格式的传输数据 
+            并转换为二进制形式存入data中 */
     }
 
     int GetOccurrence(std::string& s){
         /*获取字符串s的出现次数*/
     }
-
-    int GetMxTime(){
-        /*获取功能1的答案*/
-    }
     
-    int GetBinarySimilarity(){
+    int GetMxBinarySimilarity(){
         /*获取功能2的答案*/
     }
 };

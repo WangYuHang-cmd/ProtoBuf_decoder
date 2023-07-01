@@ -11,47 +11,32 @@
 #include "ProtoBuf.h"
 #endif
 
+ProtoBuf_Decoder MyPD;
+
 void solve()
 {
-    ProtoBuf_Decoder MyPD;
-
     int n;
     std::cin >> n;
     for (int i = 1; i <= n; ++i)
     {
         int x;
-        std::cin >> x;
-        if (x == 1)
-        {
-            std::string y;
-            std::cin >> y;
-            try{
-                if(!MyPD.InsertVal(std::move(y))){
-                    throw false;
-                }
-            }catch(bool flag){
-                std::cerr << "Insert error!\n" << std::endl;
-            }
-        }
-        else
-        {
-            int y;
-            std::cin >> y;
-            if(y == 1){
-                std::cout << MyPD.GetMxTime() << std::endl;
-            }else{
-                std::cout << MyPD.GetBinarySimilarity() << std::endl;
-            }   
+        std::string y;
+        std::cin >> x >> y;
+        
+        if(x == 1){
+
+        }else{
+
         }
     }
 }
 
 signed main()
 {
-    for (int i = 1; i <= 100; ++i)
+    for (int i = 1; i <= 10; ++i)
     {
-        std::string InputFile = "test_" + std::to_string(i) + ".in";
-        std::string OutputFile = "test_" + std::to_string(i) + ".out";
+        std::string InputFile = "in" + std::to_string(i) + ".in";
+        std::string OutputFile = "out" + std::to_string(i) + ".out";
         std::freopen(InputFile.c_str(), "r", stdin);
         std::freopen(OutputFile.c_str(), "w", stdout);
         solve();
